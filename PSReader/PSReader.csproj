@@ -43,6 +43,8 @@
     <Compile Include="UIStringTable.cs" />
     <Compile Include="Models\HNTopStories.cs" />
     <Compile Include="Models\HNStory.cs" />
+    <Compile Include="StoryListItem.composer.cs" />
+    <Compile Include="StoryListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />

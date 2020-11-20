@@ -11,6 +11,18 @@ using Newtonsoft.Json;
 
 namespace PSReader
 {
+	class MyListPanelItem : ListPanelItem
+	{
+	    public Label label;
+	    public MyListPanelItem()
+	    {
+	        this.Height = 60;
+	        label = new Label();
+			label.TextColor = new UIColor(0, 0, 0, 255);
+	        this.AddChildLast(label);
+	    }
+	}
+	
     public partial class MainScreen : Scene
     {
 		string TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
@@ -18,17 +30,33 @@ namespace PSReader
 		
 		string text = "";
 		
+		List<HNStory> TopStories;
+		
         public MainScreen()
         {
             InitializeWidget();
 			List<int> TopStoryIDs = GetTopStoryIDs();
-			List<HNStory> TopStories = GetTopStories(TopStoryIDs, 20);
+			TopStories = GetTopStories(TopStoryIDs, 20);
 			
-			foreach(HNStory story in TopStories)
-			{
-				text += story.title + "\n";
-			}
-			this.Label_1.Text = text;
+			// set the section titles and item counts
+			StoryList.Sections = new ListSectionCollection {
+			        new ListSection("Top Stories", 20)};
+			
+			// set the creator delegate
+			
+			StoryList.SetListItemCreator(() => new StoryListItem());
+			// set the updater delegate
+			StoryList.SetListItemUpdater((item) => { 
+				StoryListItem currentItem = (StoryListItem)item;
+				
+				currentItem.ListItemIndex.Text = ""+item.Index;
+				currentItem.ListItemTitle.Text = TopStories[item.Index].title;
+				currentItem.ListItemAuthor.Text = TopStories[item.Index].by;
+				currentItem.ListItemTime.Text = ""+TopStories[item.Index].time;
+			});
+			
+			StoryList.SelectItemChanged += (sender, e) =>
+			    Console.WriteLine("selected index:{0}", e.Index);
         }
 		
 		public List<HNStory> GetTopStories(List<int> ids, int num)
