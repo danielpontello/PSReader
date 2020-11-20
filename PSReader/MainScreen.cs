@@ -16,12 +16,38 @@ namespace PSReader
 		string TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
 		string STORY_ID_URL = "https://hacker-news.firebaseio.com/v0/item/{0}.json?print=pretty";
 		
+		string text = "";
+		
         public MainScreen()
         {
             InitializeWidget();
-			List<int> TopStories = GetTopStoryIDs();
-			this.Label_1.Text = "Story Count: " + TopStories.Count;
+			List<int> TopStoryIDs = GetTopStoryIDs();
+			List<HNStory> TopStories = GetTopStories(TopStoryIDs, 20);
+			
+			foreach(HNStory story in TopStories)
+			{
+				text += story.title + "\n";
+			}
+			this.Label_1.Text = text;
         }
+		
+		public List<HNStory> GetTopStories(List<int> ids, int num)
+		{
+			List<HNStory> stories = new List<HNStory>();
+			
+			for(int i=0; i<num; i++)
+			{
+				String storyJson = Download(string.Format(STORY_ID_URL, ids[i]));
+				
+				if(storyJson == null)
+					continue;
+				
+				HNStory story = JsonConvert.DeserializeObject<HNStory>(storyJson);
+				stories.Add(story);
+			}
+			
+			return stories;
+		}
         
 		public List<int> GetTopStoryIDs()
 		{
@@ -31,6 +57,7 @@ namespace PSReader
 				return null;
 			
 			List<int> topStories = JsonConvert.DeserializeObject<List<int>>(topStoriesJson);
+			Console.Write ("Obtained " + topStories.Count + " stories.");
 			return topStories;			
 		}
 		
