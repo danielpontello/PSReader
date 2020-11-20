@@ -58,7 +58,7 @@ namespace PSReader
                     this.DesignHeight = 544;
 
                     Label_1.SetPosition(0, 0);
-                    Label_1.SetSize(960, 537);
+                    Label_1.SetSize(960, 544);
                     Label_1.Anchors = Anchors.None;
                     Label_1.Visible = true;
 

@@ -41,6 +41,8 @@
     <Compile Include="MainScreen.composer.cs" />
     <Compile Include="MainScreen.cs" />
     <Compile Include="UIStringTable.cs" />
+    <Compile Include="Models\HNTopStories.cs" />
+    <Compile Include="Models\HNStory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -50,4 +52,13 @@
     <PsmMetadata Include="app.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Sce\Sce.Psm.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Newtonsoft.Json\Newtonsoft.Json\Newtonsoft.Json.csproj">
+      <Project>{00625654-7ED6-4FB4-B804-79B4F92FCA8D}</Project>
+      <Name>Newtonsoft.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

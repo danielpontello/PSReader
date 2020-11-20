@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 using Sce.PlayStation.Core;
 using Sce.PlayStation.Core.Environment;
 using Sce.PlayStation.Core.Graphics;
@@ -50,7 +49,7 @@ namespace PSReader
 		public static void Render ()
 		{
 			// Clear the screen
-			graphics.SetClearColor (0255, 255, 255, 255);
+			graphics.SetClearColor (255, 255, 255, 255);
 			graphics.Clear ();
             UISystem.Render ();
 
