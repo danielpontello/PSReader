@@ -10,19 +10,7 @@ using Sce.PlayStation.HighLevel.UI;
 using Newtonsoft.Json;
 
 namespace PSReader
-{
-	class MyListPanelItem : ListPanelItem
-	{
-	    public Label label;
-	    public MyListPanelItem()
-	    {
-	        this.Height = 60;
-	        label = new Label();
-			label.TextColor = new UIColor(0, 0, 0, 255);
-	        this.AddChildLast(label);
-	    }
-	}
-	
+{	
     public partial class MainScreen : Scene
     {
 		string TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
