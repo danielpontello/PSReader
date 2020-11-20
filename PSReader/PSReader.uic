@@ -236,20 +236,20 @@
             <Effect>None</Effect>
             <OwnerNode z:Ref="i6" />
             <VariableName>ContentLabel</VariableName>
-            <H_Alignment>Left</H_Alignment>
+            <H_Alignment>Center</H_Alignment>
             <HasTextShadow>false</HasTextShadow>
             <LineBreaks>Character</LineBreaks>
-            <Text>Hello World!</Text>
+            <Text>No story selected.</Text>
             <TextAlpha>100</TextAlpha>
             <TextColor xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Windows.Media">
               <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>0</d7p1:R>
+              <d7p1:B>95</d7p1:B>
+              <d7p1:G>95</d7p1:G>
+              <d7p1:R>95</d7p1:R>
               <d7p1:ScA>1</d7p1:ScA>
-              <d7p1:ScB>0</d7p1:ScB>
-              <d7p1:ScG>0</d7p1:ScG>
-              <d7p1:ScR>0</d7p1:ScR>
+              <d7p1:ScB>0.114435382</d7p1:ScB>
+              <d7p1:ScG>0.114435382</d7p1:ScG>
+              <d7p1:ScR>0.114435382</d7p1:ScR>
             </TextColor>
             <TextFont xmlns:d7p1="http://schemas.datacontract.org/2004/07/UIComposer.ModelData">
               <d7p1:FontFamily>System</d7p1:FontFamily>
@@ -272,7 +272,7 @@
               <d7p1:OffsetY>2</d7p1:OffsetY>
             </TextShadow>
             <TextTrimming>EllipsisCharacter</TextTrimming>
-            <V_Alignment>Top</V_Alignment>
+            <V_Alignment>Middle</V_Alignment>
           </Property>
           <IsRoot>false</IsRoot>
           <PivotPos>LeftTop</PivotPos>
@@ -604,7 +604,7 @@
               <X>71</X>
               <Y>36</Y>
               <Width>368</Width>
-              <Height>36</Height>
+              <Height>22</Height>
               <Visible>true</Visible>
               <Anchors>None</Anchors>
             </LayoutProperty>
@@ -628,17 +628,17 @@
             <TextAlpha>100</TextAlpha>
             <TextColor xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Windows.Media">
               <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>0</d7p1:R>
+              <d7p1:B>95</d7p1:B>
+              <d7p1:G>95</d7p1:G>
+              <d7p1:R>95</d7p1:R>
               <d7p1:ScA>1</d7p1:ScA>
-              <d7p1:ScB>0</d7p1:ScB>
-              <d7p1:ScG>0</d7p1:ScG>
-              <d7p1:ScR>0</d7p1:ScR>
+              <d7p1:ScB>0.114285715</d7p1:ScB>
+              <d7p1:ScG>0.114285715</d7p1:ScG>
+              <d7p1:ScR>0.114285715</d7p1:ScR>
             </TextColor>
             <TextFont xmlns:d7p1="http://schemas.datacontract.org/2004/07/UIComposer.ModelData">
               <d7p1:FontFamily>System</d7p1:FontFamily>
-              <d7p1:FontSize>25</d7p1:FontSize>
+              <d7p1:FontSize>20</d7p1:FontSize>
               <d7p1:FontStyle>Regular</d7p1:FontStyle>
             </TextFont>
             <TextShadow xmlns:d7p1="http://schemas.datacontract.org/2004/07/UIComposer.ModelData">
@@ -678,10 +678,10 @@
           <Nodes />
           <LayoutProperty>
             <LayoutProperty>
-              <X>746</X>
+              <X>748</X>
               <Y>36</Y>
-              <Width>214</Width>
-              <Height>36</Height>
+              <Width>210</Width>
+              <Height>22</Height>
               <Visible>true</Visible>
               <Anchors>None</Anchors>
             </LayoutProperty>
@@ -705,17 +705,17 @@
             <TextAlpha>100</TextAlpha>
             <TextColor xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Windows.Media">
               <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>0</d7p1:R>
+              <d7p1:B>95</d7p1:B>
+              <d7p1:G>95</d7p1:G>
+              <d7p1:R>95</d7p1:R>
               <d7p1:ScA>1</d7p1:ScA>
-              <d7p1:ScB>0</d7p1:ScB>
-              <d7p1:ScG>0</d7p1:ScG>
-              <d7p1:ScR>0</d7p1:ScR>
+              <d7p1:ScB>0.114435382</d7p1:ScB>
+              <d7p1:ScG>0.114435382</d7p1:ScG>
+              <d7p1:ScR>0.114435382</d7p1:ScR>
             </TextColor>
             <TextFont xmlns:d7p1="http://schemas.datacontract.org/2004/07/UIComposer.ModelData">
               <d7p1:FontFamily>System</d7p1:FontFamily>
-              <d7p1:FontSize>25</d7p1:FontSize>
+              <d7p1:FontSize>20</d7p1:FontSize>
               <d7p1:FontStyle>Regular</d7p1:FontStyle>
             </TextFont>
             <TextShadow xmlns:d7p1="http://schemas.datacontract.org/2004/07/UIComposer.ModelData">
@@ -758,7 +758,7 @@
               <X>0</X>
               <Y>0</Y>
               <Width>71</Width>
-              <Height>72</Height>
+              <Height>58</Height>
               <Visible>true</Visible>
               <Anchors>None</Anchors>
             </LayoutProperty>
@@ -782,13 +782,13 @@
             <TextAlpha>100</TextAlpha>
             <TextColor xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Windows.Media">
               <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>0</d7p1:R>
+              <d7p1:B>95</d7p1:B>
+              <d7p1:G>95</d7p1:G>
+              <d7p1:R>95</d7p1:R>
               <d7p1:ScA>1</d7p1:ScA>
-              <d7p1:ScB>0</d7p1:ScB>
-              <d7p1:ScG>0</d7p1:ScG>
-              <d7p1:ScR>0</d7p1:ScR>
+              <d7p1:ScB>0.114435382</d7p1:ScB>
+              <d7p1:ScG>0.114435382</d7p1:ScG>
+              <d7p1:ScR>0.114435382</d7p1:ScR>
             </TextColor>
             <TextFont xmlns:d7p1="http://schemas.datacontract.org/2004/07/UIComposer.ModelData">
               <d7p1:FontFamily>System</d7p1:FontFamily>
@@ -833,7 +833,7 @@
           <X>0</X>
           <Y>0</Y>
           <Width>960</Width>
-          <Height>72</Height>
+          <Height>58</Height>
           <Visible>true</Visible>
           <Anchors>None</Anchors>
         </LayoutProperty>

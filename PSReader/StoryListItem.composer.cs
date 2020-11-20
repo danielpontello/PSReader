@@ -45,18 +45,18 @@ namespace PSReader
             ListItemTitle.LineBreak = LineBreak.Character;
 
             // ListItemAuthor
-            ListItemAuthor.TextColor = new UIColor(0f / 255f, 0f / 255f, 0f / 255f, 255f / 255f);
-            ListItemAuthor.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
+            ListItemAuthor.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
+            ListItemAuthor.Font = new UIFont(FontAlias.System, 20, FontStyle.Regular);
             ListItemAuthor.LineBreak = LineBreak.Character;
 
             // ListItemTime
-            ListItemTime.TextColor = new UIColor(0f / 255f, 0f / 255f, 0f / 255f, 255f / 255f);
-            ListItemTime.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
+            ListItemTime.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
+            ListItemTime.Font = new UIFont(FontAlias.System, 20, FontStyle.Regular);
             ListItemTime.LineBreak = LineBreak.Character;
             ListItemTime.HorizontalAlignment = HorizontalAlignment.Right;
 
             // ListItemIndex
-            ListItemIndex.TextColor = new UIColor(0f / 255f, 0f / 255f, 0f / 255f, 255f / 255f);
+            ListItemIndex.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
             ListItemIndex.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
             ListItemIndex.LineBreak = LineBreak.Character;
 
@@ -97,7 +97,7 @@ namespace PSReader
                     break;
 
                 default:
-                    this.SetSize(960, 72);
+                    this.SetSize(960, 58);
                     this.Anchors = Anchors.None;
 
                     ListItemTitle.SetPosition(71, 0);
@@ -106,17 +106,17 @@ namespace PSReader
                     ListItemTitle.Visible = true;
 
                     ListItemAuthor.SetPosition(71, 36);
-                    ListItemAuthor.SetSize(368, 36);
+                    ListItemAuthor.SetSize(368, 22);
                     ListItemAuthor.Anchors = Anchors.None;
                     ListItemAuthor.Visible = true;
 
-                    ListItemTime.SetPosition(746, 36);
-                    ListItemTime.SetSize(214, 36);
+                    ListItemTime.SetPosition(748, 36);
+                    ListItemTime.SetSize(210, 22);
                     ListItemTime.Anchors = Anchors.None;
                     ListItemTime.Visible = true;
 
                     ListItemIndex.SetPosition(0, 0);
-                    ListItemIndex.SetSize(71, 72);
+                    ListItemIndex.SetSize(71, 58);
                     ListItemIndex.Anchors = Anchors.None;
                     ListItemIndex.Visible = true;
 

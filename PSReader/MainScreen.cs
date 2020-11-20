@@ -49,7 +49,7 @@ namespace PSReader
 			StoryList.SetListItemUpdater((item) => { 
 				StoryListItem currentItem = (StoryListItem)item;
 				
-				currentItem.ListItemIndex.Text = ""+item.Index;
+				currentItem.ListItemIndex.Text = ""+(item.Index+1);
 				currentItem.ListItemTitle.Text = TopStories[item.Index].title;
 				currentItem.ListItemAuthor.Text = TopStories[item.Index].by;
 				currentItem.ListItemTime.Text = ""+TopStories[item.Index].time;
@@ -57,6 +57,8 @@ namespace PSReader
 			
 			StoryList.SelectItemChanged += (sender, e) =>
 			    Console.WriteLine("selected index:{0}", e.Index);
+			
+			Status.Text = TopStories.Count + " stories fetched.";
         }
 		
 		public List<HNStory> GetTopStories(List<int> ids, int num)

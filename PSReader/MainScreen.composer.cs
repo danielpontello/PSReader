@@ -65,10 +65,10 @@ namespace PSReader
             Label_1.HorizontalAlignment = HorizontalAlignment.Right;
 
             // ContentLabel
-            ContentLabel.TextColor = new UIColor(0f / 255f, 0f / 255f, 0f / 255f, 255f / 255f);
+            ContentLabel.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
             ContentLabel.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
             ContentLabel.LineBreak = LineBreak.Character;
-            ContentLabel.VerticalAlignment = VerticalAlignment.Top;
+            ContentLabel.HorizontalAlignment = HorizontalAlignment.Center;
 
             // StatusPanel
             StatusPanel.BackgroundColor = new UIColor(255f / 255f, 102f / 255f, 0f / 255f, 255f / 255f);
@@ -184,7 +184,7 @@ namespace PSReader
 
             Label_1.Text = "00:43";
 
-            ContentLabel.Text = "Hello World!";
+            ContentLabel.Text = "No story selected.";
 
             Status.Text = "Done";
         }
