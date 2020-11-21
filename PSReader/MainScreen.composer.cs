@@ -13,7 +13,7 @@ namespace PSReader
     {
         Panel TitlePanel;
         Label TitleText;
-        Label Label_1;
+        Label ClockText;
         Panel StatusPanel;
         Label Status;
         ListPanel StoryList;
@@ -34,8 +34,8 @@ namespace PSReader
             TitlePanel.Name = "TitlePanel";
             TitleText = new Label();
             TitleText.Name = "TitleText";
-            Label_1 = new Label();
-            Label_1.Name = "Label_1";
+            ClockText = new Label();
+            ClockText.Name = "ClockText";
             StatusPanel = new Panel();
             StatusPanel.Name = "StatusPanel";
             Status = new Label();
@@ -66,18 +66,18 @@ namespace PSReader
             TitlePanel.BackgroundColor = new UIColor(255f / 255f, 102f / 255f, 0f / 255f, 255f / 255f);
             TitlePanel.Clip = true;
             TitlePanel.AddChildLast(TitleText);
-            TitlePanel.AddChildLast(Label_1);
+            TitlePanel.AddChildLast(ClockText);
 
             // TitleText
             TitleText.TextColor = new UIColor(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
             TitleText.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
             TitleText.LineBreak = LineBreak.Character;
 
-            // Label_1
-            Label_1.TextColor = new UIColor(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
-            Label_1.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
-            Label_1.LineBreak = LineBreak.Character;
-            Label_1.HorizontalAlignment = HorizontalAlignment.Right;
+            // ClockText
+            ClockText.TextColor = new UIColor(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
+            ClockText.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
+            ClockText.LineBreak = LineBreak.Character;
+            ClockText.HorizontalAlignment = HorizontalAlignment.Right;
 
             // StatusPanel
             StatusPanel.BackgroundColor = new UIColor(255f / 255f, 102f / 255f, 0f / 255f, 255f / 255f);
@@ -141,10 +141,10 @@ namespace PSReader
                     TitleText.Anchors = Anchors.None;
                     TitleText.Visible = true;
 
-                    Label_1.SetPosition(12, 0);
-                    Label_1.SetSize(214, 36);
-                    Label_1.Anchors = Anchors.None;
-                    Label_1.Visible = true;
+                    ClockText.SetPosition(12, 0);
+                    ClockText.SetSize(214, 36);
+                    ClockText.Anchors = Anchors.None;
+                    ClockText.Visible = true;
 
                     StatusPanel.SetPosition(0, 0);
                     StatusPanel.SetSize(100, 100);
@@ -202,10 +202,10 @@ namespace PSReader
                     TitleText.Anchors = Anchors.None;
                     TitleText.Visible = true;
 
-                    Label_1.SetPosition(735, 0);
-                    Label_1.SetSize(214, 40);
-                    Label_1.Anchors = Anchors.None;
-                    Label_1.Visible = true;
+                    ClockText.SetPosition(735, 0);
+                    ClockText.SetSize(214, 40);
+                    ClockText.Anchors = Anchors.None;
+                    ClockText.Visible = true;
 
                     StatusPanel.SetPosition(0, 504);
                     StatusPanel.SetSize(960, 40);
@@ -256,7 +256,7 @@ namespace PSReader
         {
             TitleText.Text = "Hacker News";
 
-            Label_1.Text = "01:33";
+            ClockText.Text = "01:33";
 
             Status.Text = "Done";
 

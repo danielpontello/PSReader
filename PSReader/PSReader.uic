@@ -109,7 +109,7 @@
               <Property i:type="LabelProperty">
                 <Effect>None</Effect>
                 <OwnerNode z:Ref="i5" />
-                <VariableName>Label_1</VariableName>
+                <VariableName>ClockText</VariableName>
                 <H_Alignment>Right</H_Alignment>
                 <HasTextShadow>false</HasTextShadow>
                 <LineBreaks>Character</LineBreaks>

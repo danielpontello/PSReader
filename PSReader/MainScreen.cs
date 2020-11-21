@@ -95,6 +95,12 @@ namespace PSReader
 			return comments;
 		}
 		
+		protected override void OnUpdate (float elapsedTime)
+		{
+			base.OnUpdate (elapsedTime);
+			this.ClockText.Text = DateTime.Now.ToString("hh:mm:ss");
+		}
+		
 		public List<HNStory> GetTopStories(List<int> ids, int num)
 		{
 			List<HNStory> stories = new List<HNStory>();

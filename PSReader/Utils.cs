@@ -21,6 +21,7 @@ namespace PSReader
 			sb.Replace("&#x27;", "'");
 			sb.Replace("&gt;", ">");
 			sb.Replace("&lt;", "<");
+			sb.Replace("&quot;", "\"");
 			sb.Replace("<p>", Environment.NewLine);		
 			sb.Replace("<i>", "");		
 			return sb.ToString();
