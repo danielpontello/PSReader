@@ -2,7 +2,7 @@
 ## About
 PSReader is a simple Hacker News reader for the old Playstation Mobile SDK, targeted at certain mobile phones and the PS Vita.
 
-![Imgur](https://i.imgur.com/GnLvmD0.png)
+![Imgur](https://i.imgur.com/vqAX4gL.png)
 
 ## Building
 
@@ -11,10 +11,12 @@ To build it, open the PSReader.sln file in PSMStudio and build both projects.
 
 ## TODO
 
-- Implement Story View panel
-- Implement comments
-- Multithread everything
-- Settings panel
+- ✓ Implement Story View panel
+- ✓ Implement comments
+    - ✗ Nested comments
+    - ✗ Click to see full comment
+- ✗ Multithread everything
+- ✗ Settings panel
 
 ## Why?
 
