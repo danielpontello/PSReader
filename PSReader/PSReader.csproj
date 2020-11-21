@@ -45,6 +45,10 @@
     <Compile Include="Models\HNStory.cs" />
     <Compile Include="StoryListItem.composer.cs" />
     <Compile Include="StoryListItem.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="CommentListItem.composer.cs" />
+    <Compile Include="CommentListItem.cs" />
+    <Compile Include="Models\HNComment.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />

@@ -59,6 +59,7 @@ namespace PSReader
             ListItemIndex.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
             ListItemIndex.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
             ListItemIndex.LineBreak = LineBreak.Character;
+            ListItemIndex.HorizontalAlignment = HorizontalAlignment.Center;
 
             SetWidgetLayout(orientation);
 
@@ -101,17 +102,17 @@ namespace PSReader
                     this.Anchors = Anchors.None;
 
                     ListItemTitle.SetPosition(71, 0);
-                    ListItemTitle.SetSize(887, 36);
+                    ListItemTitle.SetSize(863, 36);
                     ListItemTitle.Anchors = Anchors.None;
                     ListItemTitle.Visible = true;
 
                     ListItemAuthor.SetPosition(71, 36);
-                    ListItemAuthor.SetSize(368, 22);
+                    ListItemAuthor.SetSize(472, 22);
                     ListItemAuthor.Anchors = Anchors.None;
                     ListItemAuthor.Visible = true;
 
-                    ListItemTime.SetPosition(748, 36);
-                    ListItemTime.SetSize(210, 22);
+                    ListItemTime.SetPosition(543, 36);
+                    ListItemTime.SetSize(391, 22);
                     ListItemTime.Anchors = Anchors.None;
                     ListItemTime.Visible = true;
 

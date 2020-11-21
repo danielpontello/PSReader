@@ -19,35 +19,81 @@ namespace PSReader
 		string text = "";
 		
 		List<HNStory> TopStories;
+		List<HNComment> Comments;
 		
         public MainScreen()
         {
             InitializeWidget();
 			List<int> TopStoryIDs = GetTopStoryIDs();
 			TopStories = GetTopStories(TopStoryIDs, 20);
+			Comments = new List<HNComment>();
 			
-			// set the section titles and item counts
+			// Story List
 			StoryList.Sections = new ListSectionCollection {
-			        new ListSection("Top Stories", 20)};
-			
-			// set the creator delegate
-			
+			        new ListSection(" Top Stories", 20)};
 			StoryList.SetListItemCreator(() => new StoryListItem());
-			// set the updater delegate
 			StoryList.SetListItemUpdater((item) => { 
 				StoryListItem currentItem = (StoryListItem)item;
 				
 				currentItem.ListItemIndex.Text = ""+(item.Index+1);
 				currentItem.ListItemTitle.Text = TopStories[item.Index].title;
 				currentItem.ListItemAuthor.Text = TopStories[item.Index].by;
-				currentItem.ListItemTime.Text = ""+TopStories[item.Index].time;
+				currentItem.ListItemTime.Text = Utils.GetPrettyDate(Utils.UnixTimestampToDateTime(TopStories[item.Index].time));
 			});
 			
-			StoryList.SelectItemChanged += (sender, e) =>
-			    Console.WriteLine("selected index:{0}", e.Index);
+			StoryList.SelectItemChanged += HandleStoryListSelectItemChanged;
 			
+			// Comment List
+			CommentList.Sections = new ListSectionCollection {
+			        new ListSection(" Comments", 20)};
+			CommentList.SetListItemCreator(() => new CommentListItem());
+			CommentList.SetListItemUpdater((item) => {
+				CommentListItem currentItem = (CommentListItem)item;
+				if(item.Index < Comments.Count)
+				{
+					currentItem.CommentBy.Text = Comments[item.Index].by;
+					currentItem.CommentTime.Text = Utils.GetPrettyDate(Utils.UnixTimestampToDateTime(Comments[item.Index].time));
+					currentItem.CommentContent.Text = Utils.HTMLDecode(Comments[item.Index].text);
+				}				
+			});
+			
+			// Status Bar		
 			Status.Text = TopStories.Count + " stories fetched.";
         }
+
+        void HandleStoryListSelectItemChanged (object sender, ListPanelItemSelectChangedEventArgs e)
+        {
+			NoStoryPanel.Visible = true;
+			ContentLabel.Text = "Loading Story...";
+        	HNStory selectedStory = TopStories[e.Index];
+			Console.WriteLine("story comments", selectedStory.kids.Count);
+			
+			
+			Comments = GetComments(selectedStory.kids, 20);
+			
+			StoryTitle.Text = selectedStory.title;
+			StoryInfo.Text = selectedStory.score + " points by " + selectedStory.by + " - " + Utils.GetPrettyDate(
+				Utils.UnixTimestampToDateTime(TopStories[e.Index].time));
+			NoStoryPanel.Visible = false;
+        }
+		
+		public List<HNComment> GetComments(List<int> ids, int num)
+		{
+			List<HNComment> comments = new List<HNComment>();
+			
+			for(int i=0; i<Math.Min (num, ids.Count); i++)
+			{
+				String commentJson = Download(string.Format(STORY_ID_URL, ids[i]));
+				
+				if(commentJson == null)
+					continue;
+				
+				HNComment comment = JsonConvert.DeserializeObject<HNComment>(commentJson);
+				comments.Add(comment);
+			}
+			
+			return comments;
+		}
 		
 		public List<HNStory> GetTopStories(List<int> ids, int num)
 		{

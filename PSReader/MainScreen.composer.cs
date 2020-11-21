@@ -14,10 +14,14 @@ namespace PSReader
         Panel TitlePanel;
         Label TitleText;
         Label Label_1;
-        Label ContentLabel;
         Panel StatusPanel;
         Label Status;
         ListPanel StoryList;
+        Label StoryTitle;
+        ListPanel CommentList;
+        Label StoryInfo;
+        Panel NoStoryPanel;
+        Label ContentLabel;
 
         private void InitializeWidget()
         {
@@ -32,20 +36,31 @@ namespace PSReader
             TitleText.Name = "TitleText";
             Label_1 = new Label();
             Label_1.Name = "Label_1";
-            ContentLabel = new Label();
-            ContentLabel.Name = "ContentLabel";
             StatusPanel = new Panel();
             StatusPanel.Name = "StatusPanel";
             Status = new Label();
             Status.Name = "Status";
             StoryList = new ListPanel();
             StoryList.Name = "StoryList";
+            StoryTitle = new Label();
+            StoryTitle.Name = "StoryTitle";
+            CommentList = new ListPanel();
+            CommentList.Name = "CommentList";
+            StoryInfo = new Label();
+            StoryInfo.Name = "StoryInfo";
+            NoStoryPanel = new Panel();
+            NoStoryPanel.Name = "NoStoryPanel";
+            ContentLabel = new Label();
+            ContentLabel.Name = "ContentLabel";
 
             // MainScreen
             this.RootWidget.AddChildLast(TitlePanel);
-            this.RootWidget.AddChildLast(ContentLabel);
             this.RootWidget.AddChildLast(StatusPanel);
             this.RootWidget.AddChildLast(StoryList);
+            this.RootWidget.AddChildLast(StoryTitle);
+            this.RootWidget.AddChildLast(CommentList);
+            this.RootWidget.AddChildLast(StoryInfo);
+            this.RootWidget.AddChildLast(NoStoryPanel);
 
             // TitlePanel
             TitlePanel.BackgroundColor = new UIColor(255f / 255f, 102f / 255f, 0f / 255f, 255f / 255f);
@@ -64,12 +79,6 @@ namespace PSReader
             Label_1.LineBreak = LineBreak.Character;
             Label_1.HorizontalAlignment = HorizontalAlignment.Right;
 
-            // ContentLabel
-            ContentLabel.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
-            ContentLabel.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
-            ContentLabel.LineBreak = LineBreak.Character;
-            ContentLabel.HorizontalAlignment = HorizontalAlignment.Center;
-
             // StatusPanel
             StatusPanel.BackgroundColor = new UIColor(255f / 255f, 102f / 255f, 0f / 255f, 255f / 255f);
             StatusPanel.Clip = true;
@@ -82,6 +91,31 @@ namespace PSReader
 
             // StoryList
             StoryList.ScrollBarVisibility = ScrollBarVisibility.ScrollableVisible;
+
+            // StoryTitle
+            StoryTitle.TextColor = new UIColor(0f / 255f, 0f / 255f, 0f / 255f, 255f / 255f);
+            StoryTitle.Font = new UIFont(FontAlias.System, 25, FontStyle.Bold);
+            StoryTitle.LineBreak = LineBreak.Character;
+            StoryTitle.VerticalAlignment = VerticalAlignment.Top;
+
+            // CommentList
+            CommentList.ScrollBarVisibility = ScrollBarVisibility.ScrollableVisible;
+
+            // StoryInfo
+            StoryInfo.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
+            StoryInfo.Font = new UIFont(FontAlias.System, 20, FontStyle.Regular);
+            StoryInfo.LineBreak = LineBreak.Character;
+
+            // NoStoryPanel
+            NoStoryPanel.BackgroundColor = new UIColor(255f / 255f, 255f / 255f, 255f / 255f, 255f / 255f);
+            NoStoryPanel.Clip = true;
+            NoStoryPanel.AddChildLast(ContentLabel);
+
+            // ContentLabel
+            ContentLabel.TextColor = new UIColor(95f / 255f, 95f / 255f, 95f / 255f, 255f / 255f);
+            ContentLabel.Font = new UIFont(FontAlias.System, 25, FontStyle.Regular);
+            ContentLabel.LineBreak = LineBreak.Character;
+            ContentLabel.HorizontalAlignment = HorizontalAlignment.Center;
 
             SetWidgetLayout(orientation);
 
@@ -112,11 +146,6 @@ namespace PSReader
                     Label_1.Anchors = Anchors.None;
                     Label_1.Visible = true;
 
-                    ContentLabel.SetPosition(0, 0);
-                    ContentLabel.SetSize(214, 36);
-                    ContentLabel.Anchors = Anchors.None;
-                    ContentLabel.Visible = true;
-
                     StatusPanel.SetPosition(0, 0);
                     StatusPanel.SetSize(100, 100);
                     StatusPanel.Anchors = Anchors.None;
@@ -131,6 +160,31 @@ namespace PSReader
                     StoryList.SetSize(854, 400);
                     StoryList.Anchors = Anchors.None;
                     StoryList.Visible = true;
+
+                    StoryTitle.SetPosition(505, 141);
+                    StoryTitle.SetSize(214, 36);
+                    StoryTitle.Anchors = Anchors.None;
+                    StoryTitle.Visible = true;
+
+                    CommentList.SetPosition(68, 27);
+                    CommentList.SetSize(854, 400);
+                    CommentList.Anchors = Anchors.None;
+                    CommentList.Visible = true;
+
+                    StoryInfo.SetPosition(488, 86);
+                    StoryInfo.SetSize(214, 36);
+                    StoryInfo.Anchors = Anchors.None;
+                    StoryInfo.Visible = true;
+
+                    NoStoryPanel.SetPosition(558, 128);
+                    NoStoryPanel.SetSize(100, 100);
+                    NoStoryPanel.Anchors = Anchors.None;
+                    NoStoryPanel.Visible = true;
+
+                    ContentLabel.SetPosition(0, 0);
+                    ContentLabel.SetSize(214, 36);
+                    ContentLabel.Anchors = Anchors.None;
+                    ContentLabel.Visible = true;
 
                     break;
 
@@ -153,11 +207,6 @@ namespace PSReader
                     Label_1.Anchors = Anchors.None;
                     Label_1.Visible = true;
 
-                    ContentLabel.SetPosition(479, 40);
-                    ContentLabel.SetSize(481, 464);
-                    ContentLabel.Anchors = Anchors.None;
-                    ContentLabel.Visible = true;
-
                     StatusPanel.SetPosition(0, 504);
                     StatusPanel.SetSize(960, 40);
                     StatusPanel.Anchors = Anchors.None;
@@ -173,6 +222,31 @@ namespace PSReader
                     StoryList.Anchors = Anchors.None;
                     StoryList.Visible = true;
 
+                    StoryTitle.SetPosition(488, 51);
+                    StoryTitle.SetSize(461, 27);
+                    StoryTitle.Anchors = Anchors.None;
+                    StoryTitle.Visible = true;
+
+                    CommentList.SetPosition(488, 107);
+                    CommentList.SetSize(461, 395);
+                    CommentList.Anchors = Anchors.None;
+                    CommentList.Visible = true;
+
+                    StoryInfo.SetPosition(488, 78);
+                    StoryInfo.SetSize(461, 20);
+                    StoryInfo.Anchors = Anchors.None;
+                    StoryInfo.Visible = true;
+
+                    NoStoryPanel.SetPosition(479, 40);
+                    NoStoryPanel.SetSize(481, 464);
+                    NoStoryPanel.Anchors = Anchors.None;
+                    NoStoryPanel.Visible = true;
+
+                    ContentLabel.SetPosition(0, 0);
+                    ContentLabel.SetSize(481, 464);
+                    ContentLabel.Anchors = Anchors.None;
+                    ContentLabel.Visible = true;
+
                     break;
             }
             _currentLayoutOrientation = orientation;
@@ -182,11 +256,15 @@ namespace PSReader
         {
             TitleText.Text = "Hacker News";
 
-            Label_1.Text = "00:43";
-
-            ContentLabel.Text = "No story selected.";
+            Label_1.Text = "01:33";
 
             Status.Text = "Done";
+
+            StoryTitle.Text = "label";
+
+            StoryInfo.Text = "Test Text";
+
+            ContentLabel.Text = "No story selected.";
         }
 
         private void onShowing(object sender, EventArgs e)
